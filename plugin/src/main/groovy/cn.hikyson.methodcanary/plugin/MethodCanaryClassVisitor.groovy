@@ -11,7 +11,7 @@ class MethodCanaryClassVisitor extends ClassVisitor {
     private StringBuilder mResult
 
     MethodCanaryClassVisitor(Project project, ClassVisitor cv, InExcludesEngine inExcludesEngine, StringBuilder result) {
-        super(Opcodes.ASM5, cv)
+        super(Opcodes.ASM6, cv)
         this.mProject = project
         this.mInExcludesEngine = inExcludesEngine
         this.mClassInfo = new ClassInfo()
@@ -50,7 +50,7 @@ class MethodCanaryClassVisitor extends ClassVisitor {
         private StringBuilder mResult
 
         MethodCanaryMethodVisitor(Project project, MethodVisitor mv, ClassInfo classInfo, MethodInfo methodInfo, InExcludesEngine inExcludesEngine, StringBuilder result) {
-            super(Opcodes.ASM5, mv, methodInfo.access, methodInfo.name, methodInfo.desc)
+            super(Opcodes.ASM6, mv, methodInfo.access, methodInfo.name, methodInfo.desc)
             this.mProject = project
             this.mClassInfo = classInfo
             this.mMethodInfo = methodInfo
